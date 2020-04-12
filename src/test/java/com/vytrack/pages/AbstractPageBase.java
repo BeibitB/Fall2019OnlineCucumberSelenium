@@ -28,6 +28,7 @@ public class AbstractPageBase {
     protected WebElement currentUser;
 
     public AbstractPageBase() {
+
         PageFactory.initElements(driver, this);
     }
 
