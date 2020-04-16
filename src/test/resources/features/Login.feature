@@ -15,3 +15,9 @@ Feature: Login
     Given user on the landing page
     When user log in as store manager
     Then user should verify that title is a Dashboard
+
+  @driver
+  Scenario: Login as driver and verify that title is Dashboard
+    Given user on the landing page
+    When user logs in as driver
+    Then user should verify that title is a Dashboard
