@@ -68,6 +68,7 @@ public class CalendarEventsPage extends AbstractPageBase {
 
     public String getGeneralInfoTitleText() {
         BrowserUtilities.waitForPageToLoad(20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[@class='control-label'])[1]")));
         return generalInfoTitle.getText();
     }
 

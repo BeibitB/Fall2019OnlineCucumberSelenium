@@ -44,4 +44,18 @@ public class LoginStepDefinitions {
         System.out.println("Login as a driver");
         loginPage.login("user19","UserUser123");
     }
+
+
+
+    @When("user enters {string} username and {string} password")
+    public void user_enters_username_and_password(String string, String string2) {
+        System.out.printf("Login with user name %s and %s password\n", string, string2);
+        loginPage.login(string, string2);
+    }
+
+    @When("user navigate to {string}  and {string}")
+    public void user_navigate_to_and(String tab, String module) {
+        System.out.printf("User clicks on the %s tab and navigate to %s module\n",tab,module);
+        loginPage.navigateTo(tab,module);
+    }
 }

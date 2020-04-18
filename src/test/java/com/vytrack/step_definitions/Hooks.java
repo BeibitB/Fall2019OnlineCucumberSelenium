@@ -29,6 +29,6 @@ public class Hooks {
     @After
     public void teardown(){
         System.out.println("Cleanup");
-        Driver.closeDriver();
+       Driver.closeDriver();
     }
 }
