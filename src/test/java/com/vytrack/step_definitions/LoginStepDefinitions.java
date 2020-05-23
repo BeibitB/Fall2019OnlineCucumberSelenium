@@ -11,7 +11,7 @@ import org.junit.Assert;
 public class LoginStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
-    @Given("user on the landing page")
+    @Given("user on the log in page")
     public void user_on_the_landing_page() {
         System.out.println("Open login page");
         String URL = ConfigurationReader.getProperty("qa3");
@@ -37,15 +37,11 @@ public class LoginStepDefinitions {
 
     }
 
-
-
     @When("user logs in as driver")
     public void user_logs_in_as_driver() {
         System.out.println("Login as a driver");
         loginPage.login("user19","UserUser123");
     }
-
-
 
     @When("user enters {string} username and {string} password")
     public void user_enters_username_and_password(String string, String string2) {
@@ -57,5 +53,10 @@ public class LoginStepDefinitions {
     public void user_navigate_to_and(String tab, String module) {
         System.out.printf("User clicks on the %s tab and navigate to %s module\n",tab,module);
         loginPage.navigateTo(tab,module);
+    }
+
+    @Then("user name should be {string}")
+    public void user_name_should_be(String string) {
+        Assert.assertEquals(string,loginPage.getCurrentUserName());
     }
 }
